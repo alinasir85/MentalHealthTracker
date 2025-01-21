@@ -3,6 +3,8 @@
 A simple and secure web application designed to help users log and track their mental health trends over time. The app
 allows users to record daily mental health statuses and view trends through interactive visualizations.
 
+![](https://iili.io/2iaUpna.png)
+
 ## Features
 
 ### Frontend (React)
