@@ -4,8 +4,8 @@ import {HeartPulse, Info} from "lucide-react";
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger} from "@app/components/ui/Tooltip";
 
 interface MoodSelectorProps {
-    value: number[];
-    onChange: (value: number[]) => void;
+    value: number;
+    onChange: (value: number) => void;
 }
 
 const MoodSelector: React.FC<MoodSelectorProps> = ({value, onChange}) => {
@@ -38,9 +38,9 @@ const MoodSelector: React.FC<MoodSelectorProps> = ({value, onChange}) => {
                 {moods.map((mood) => (
                     <button
                         key={mood.value}
-                        onClick={() => onChange([mood.value])}
+                        onClick={() => onChange(mood.value)}
                         className={`text-3xl p-2 rounded-full transition-transform hover:scale-110 ${
-                            value[0] === mood.value ? 'bg-primary/10 scale-110' : ''
+                            value === mood.value ? 'bg-primary/10 scale-110' : ''
                         }`}
                         type="button"
                         aria-label={mood.label}

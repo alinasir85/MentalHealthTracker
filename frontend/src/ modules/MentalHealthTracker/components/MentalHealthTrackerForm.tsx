@@ -17,7 +17,7 @@ import {toast} from "@app/hooks/useToast.ts";
 
 
 const initialFormData: MentalHealthFormData = {
-    moodRating: [],
+    moodRating: -1,
     anxietyLevel: "",
     sleepHours: "",
     sleepQuality: "",
@@ -46,7 +46,7 @@ const MentalHealthTrackerForm = () => {
         setIsSubmitting(true);
 
         try {
-            const response = await fetch(`${API_BASE_URL}/api/log`, {
+            const response = await fetch(`${API_BASE_URL}/api/logs`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ const MentalHealthTrackerForm = () => {
         const totalFields = 8
         let completedFields = 0
 
-        if (formData.moodRating.length > 0) completedFields++
+        if (formData.moodRating !== -1) completedFields++
         if (formData.anxietyLevel) completedFields++
         if (formData.sleepHours) completedFields++
         if (formData.sleepQuality) completedFields++

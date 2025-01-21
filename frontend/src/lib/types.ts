@@ -54,7 +54,7 @@ export enum ActivityType {
 }
 
 export interface MentalHealthFormData {
-    moodRating: number[]
+    moodRating: number
     anxietyLevel: string
     sleepHours: string
     sleepQuality: SleepQuality | ""
